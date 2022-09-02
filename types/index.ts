@@ -1,3 +1,3 @@
-export interface IProps {
-  name: string;
+export interface ISkill {
+  skillName: string;
 }
