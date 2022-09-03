@@ -47,6 +47,10 @@ const Home: NextPage = () => {
     setSkillValue("");
   };
 
+  const BackSpaceHandler = () => {
+    console.log("back space key pressed");
+  };
+
   return (
     <>
       <Head>
@@ -74,6 +78,13 @@ const Home: NextPage = () => {
                 value={skillValue}
                 placeholder="Enter your skill"
                 onChange={(e) => setSkillValue(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Backspace") {
+                    if (!skillValue) {
+                      removeSkill();
+                    }
+                  }
+                }}
                 type="text"
               />
             </form>
